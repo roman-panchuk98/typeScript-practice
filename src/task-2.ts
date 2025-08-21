@@ -1,14 +1,12 @@
-interface Product {
-    readonly id: number;
-    title: string;
-    description?: string;
-}
+type Obj = { amount: number; currency: "USD" | "EUR" | "UAH" };
 
-
-const product : Product = {
-  id: 1,
-  title: "Tablet",
-  description: "Compact and fast",
+let object: Obj = {
+  amount: 100,
+  currency: "USD",
 };
 
-console.log(`Product: ${JSON.stringify(product)}`);
+function convertCurrency({ amount, currency }: Obj): void {
+  console.log(`Converting ${amount} to ${currency}`);
+}
+
+convertCurrency(object);
