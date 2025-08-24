@@ -4,7 +4,6 @@ enum Role {
   Guest,
 }
 
-// Тип функції: приймає Role і повертає масив рядків
 function getPermissions(role: Role): string[] {
   switch (role) {
     case Role.Admin:
@@ -14,15 +13,13 @@ function getPermissions(role: Role): string[] {
     case Role.Guest:
       return ["read"];
     default:
-      // TypeScript гарантує, що сюди не можна передати інше значення
       return [];
   }
 }
 
-// Приклади використання:
-console.log(getPermissions(Role.Admin)); // ["create", "read", "update", "delete"]
-console.log(getPermissions(Role.User)); // ["read", "update"]
-console.log(getPermissions(Role.Guest)); // ["read"]
 
-// TypeScript не дозволить:
-// getPermissions("SuperAdmin"); // ❌ Помилка: Argument of type '"SuperAdmin"' is not assignable to parameter of type 'Role'.
+console.log(getPermissions(Role.Admin)); 
+console.log(getPermissions(Role.User)); 
+console.log(getPermissions(Role.Guest)); 
+
+
